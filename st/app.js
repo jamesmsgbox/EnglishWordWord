@@ -33,9 +33,19 @@ request.open("GET", url, false);
 request.send(null);  
 
 var csvData = new Array();
-var jsonObject = request.responseText.split(/\r?\n|\r/);
+var jsonObject = request.responseText.split(',');
 for (var i = 0; i < jsonObject.length; i++) {
-  csvData.push(jsonObject[i].split(','));
+  csvData.push(jsonObject[i].replace(/"/g,''));
 }
+csvData.sort(randomSort);
 // Retrived data from csv file content
-console.log(csvData);
+// console.log(csvData);
+$(document).ready(function(){
+	for(var i =0; i < csvData.length; i++) {
+		$("#gridDemo").append('<div class="grid-square">'+csvData[i]+'</div>');
+	}
+});
+
+function randomSort(a, b) {
+	return Math.random() > 0.5 ? -1 : 1;
+}
