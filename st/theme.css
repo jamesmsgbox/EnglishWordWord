@@ -121,8 +121,45 @@ code {
 	margin: 5px;
 }
 
+.grid-square-n {
+	height: 30px;
+	display: inline-block;
+	background-color: #fff;
+	border: solid 1px rgb(0,0,0,0.2);
+	padding: 2px;
+	margin: 5px;
+}
+
+.grid-square-s {
+	height: 30px;
+	display: inline-block;
+	background-color: #fff;
+	border: solid 1px rgb(0,0,0,0.2);
+	padding: 2px;
+	margin: 5px;
+}
+
 .grid-square2 {
-	width: 50px;
+	height: 30px;
+	display: inline-block;
+	background-color: #ed2;
+	border: solid 1px rgb(0,0,0,0.2);
+	padding: 2px;
+	margin: 3px;
+}
+
+.grid-square3 {
+	width: auto;
+	height: 30px;
+	display: inline-block;
+	background-color: #ed2;
+	border: solid 1px rgb(0,0,0,0.2);
+	padding: 2px;
+	margin: 3px;
+}
+
+.grid-square-a {
+	width: auto;
 	height: 30px;
 	display: inline-block;
 	background-color: #ed2;

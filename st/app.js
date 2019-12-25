@@ -1,5 +1,8 @@
 var example2Left = document.getElementById('example2-left'),
+	example2LeftA = document.getElementById('example2-a'),
 	gridDemo = document.getElementById('gridDemo'),
+	gridDemoN = document.getElementById('gridDemo-n'),
+	gridDemoS = document.getElementById('gridDemo-s'),
 	gridDemo2 = document.getElementById('gridDemo2');
 
 // Example 2 - Shared lists
@@ -11,8 +14,31 @@ new Sortable(example2Left, {
 	animation: 150
 });
 
+// Example 2 - Shared lists
+new Sortable(example2LeftA, {
+	group: {
+		name: 'grid',
+		pull: 'clone' // To clone: set pull to 'clone'
+	},
+	animation: 150
+});
+
 // Grid demo
 new Sortable(gridDemo, {
+	animation: 150,
+	group: 'grid',
+	ghostClass: 'blue-background-class'
+});
+
+// Grid demo
+new Sortable(gridDemoS, {
+	animation: 150,
+	group: 'grid',
+	ghostClass: 'blue-background-class'
+});
+
+// Grid demo
+new Sortable(gridDemoN, {
 	animation: 150,
 	group: 'grid',
 	ghostClass: 'blue-background-class'
@@ -37,7 +63,7 @@ var jsonObject = request.responseText.split(',');
 for (var i = 0; i < jsonObject.length; i++) {
   csvData.push(jsonObject[i].replace(/"/g,''));
 }
-csvData.sort(randomSort);
+// csvData.sort(randomSort);
 // Retrived data from csv file content
 // console.log(csvData);
 $(document).ready(function(){
